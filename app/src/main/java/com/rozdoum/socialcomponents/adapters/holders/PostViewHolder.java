@@ -64,7 +64,6 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
     private TextView dateTextView;
     private ImageView authorImageView;
     private ViewGroup likeViewGroup;
-    private TextView prayerForTextView;
 
     private ProfileManager profileManager;
     protected PostManager postManager;
@@ -91,10 +90,10 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
         likeViewGroup = view.findViewById(R.id.likesContainer);
         detailsTextView = view.findViewById(R.id.detailsTextView);
         authorImageView = view.findViewById(R.id.authorImageView);
-        prayerForTextView = view.findViewById(R.id.prayerForTextView);
 
-        //authorImageView 를 보이게 해줌.
+        //authorImageView 를 안보이게 해줌.
         //authorImageView.setVisibility(isAuthorNeeded ? View.VISIBLE : View.GONE);
+
 
         profileManager = ProfileManager.getInstance(context.getApplicationContext());
         postManager = PostManager.getInstance(context.getApplicationContext());

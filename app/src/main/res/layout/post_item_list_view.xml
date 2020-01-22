@@ -32,21 +32,12 @@
                 android:scaleType="centerCrop"
                 android:visibility="invisible"
                 />
-
             <com.rozdoum.socialcomponents.views.CircularImageView
                 android:id="@+id/authorImageView"
-                android:layout_width="@dimen/post_list_item_author_image_side"
-                android:layout_height="@dimen/post_list_item_author_image_side"
-                android:layout_alignTop="@+id/postImageView"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/post_list_item_author_image_margin"
-                android:layout_marginRight="@dimen/intrinsic_padding"
-
-                app:border="false"
-                app:shadow="true"
-                app:shadow_color="@color/circle_image_shadow"
-                app:shadow_radius="@dimen/circle_image_shadow_radius"
+                android:layout_width="0.1dp"
+                android:layout_height="0.1dp"
                 android:visibility="invisible"
+
                 />
 
 <!--            <Button-->
@@ -73,8 +64,9 @@
                 app:shadow="true"
                 app:shadow_color="@color/circle_image_shadow"
                 app:shadow_radius="@dimen/circle_image_shadow_radius"
-                android:transitionName="@string/post_author_image_transition_name"
+
                 />
+            <!--android:transitionName="@string/post_author_image_transition_name"-->
 
             <LinearLayout
                 android:id="@+id/titleContainer"
