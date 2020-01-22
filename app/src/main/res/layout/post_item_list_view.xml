@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -26,7 +27,7 @@
             <ImageView
                 android:id="@+id/postImageView"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/post_list_item_image_height"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/intrinsic_padding"
                 android:scaleType="centerCrop"
                 android:visibility="invisible"
@@ -36,14 +37,17 @@
                 android:id="@+id/authorImageView"
                 android:layout_width="@dimen/post_list_item_author_image_side"
                 android:layout_height="@dimen/post_list_item_author_image_side"
-                android:layout_alignParentEnd="true"
                 android:layout_alignTop="@+id/postImageView"
-                android:layout_marginRight="@dimen/intrinsic_padding"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="@dimen/post_list_item_author_image_margin"
+                android:layout_marginRight="@dimen/intrinsic_padding"
+
                 app:border="false"
                 app:shadow="true"
+                app:shadow_color="@color/circle_image_shadow"
                 app:shadow_radius="@dimen/circle_image_shadow_radius"
-                app:shadow_color="@color/circle_image_shadow" />
+                android:visibility="invisible"
+                />
 
 <!--            <Button-->
 <!--                android:id="@+id/addToMyPrayList"-->
@@ -61,10 +65,10 @@
                 android:layout_width="@dimen/post_author_image_side"
                 android:layout_height="@dimen/post_author_image_side"
                 android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/prayerForContainer"
+                android:layout_alignTop="@+id/postImageView"
+                android:layout_marginTop="@dimen/post_list_item_author_image_margin"
                 android:layout_marginRight="@dimen/intrinsic_padding"
                 android:src="@drawable/add_praylist_button"
-                android:layout_below="@+id/authorImageView"
                 app:border="false"
                 app:shadow="true"
                 app:shadow_color="@color/circle_image_shadow"
@@ -72,21 +76,41 @@
                 android:transitionName="@string/post_author_image_transition_name"
                 />
 
-            <TextView
-                android:id="@+id/titleTextView"
+            <LinearLayout
+                android:id="@+id/titleContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="@dimen/post_list_item_details_marginLeft"
-                android:layout_marginTop="@dimen/post_list_item_details_marginTop"
-                android:layout_marginBottom="@dimen/intrinsic_padding"
-                android:background="@drawable/border"
-                android:ellipsize="end"
-                android:fontFamily="@string/font_primary"
-                android:maxLines="1"
-                android:paddingLeft="@dimen/intrinsic_padding"
-                android:paddingRight="@dimen/intrinsic_padding"
-                android:textAppearance="@style/TextAppearance.Title" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="@dimen/post_list_item_details_marginLeft"
+                    android:layout_marginTop="@dimen/post_list_item_details_marginTop"
+                    android:layout_marginBottom="@dimen/intrinsic_padding"
+                    android:background="@drawable/border"
+                    android:ellipsize="end"
+                    android:fontFamily="@string/font_primary"
+                    android:textStyle="bold|italic"
+
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/intrinsic_padding"
+                    android:paddingRight="@dimen/intrinsic_padding"
+                    android:textAppearance="@style/TextAppearance.Title" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="님의 기도"
+                    android:layout_marginTop="@dimen/post_list_item_details_marginTop"
+                    android:fontFamily="@string/font_primary"
+                    android:textAppearance="@style/TextAppearance.Title"
+                    android:layout_alignLeft="@+id/titleTextView"
+                    />
+            </LinearLayout>
+
+
             <!--android:layout_below="@+id/postImageView" -->
 
             <TextView
@@ -95,7 +119,7 @@
                 android:layout_height="@dimen/post_list_item_image_height"
                 android:paddingLeft="@dimen/intrinsic_padding"
                 android:paddingRight="@dimen/intrinsic_padding"
-                android:layout_below="@+id/titleTextView"
+                android:layout_below="@+id/titleContainer"
                 android:fontFamily="@string/font_primary"
                 android:layout_marginTop="@dimen/post_list_item_details_marginTop"
                 android:layout_marginLeft="@dimen/post_list_item_details_marginLeft"

@@ -93,8 +93,8 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
         authorImageView = view.findViewById(R.id.authorImageView);
         prayerForTextView = view.findViewById(R.id.prayerForTextView);
 
-
-        authorImageView.setVisibility(isAuthorNeeded ? View.VISIBLE : View.GONE);
+        //authorImageView 를 보이게 해줌.
+        //authorImageView.setVisibility(isAuthorNeeded ? View.VISIBLE : View.GONE);
 
         profileManager = ProfileManager.getInstance(context.getApplicationContext());
         postManager = PostManager.getInstance(context.getApplicationContext());
@@ -130,7 +130,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
 
         try{
             String username = removeNewLinesDividers(post.getUsername());
-            titleTextView.setText(username+"님의 기도");
+            titleTextView.setText(username);
         } catch (Exception e){
             titleTextView.setText("이름 불러오기 실패");
         }
