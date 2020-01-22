@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/intrinsic_padding"
+    tools:context=".main.post.createPost.CreatePostActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <LinearLayout
+
+            android:id="@+id/prayList_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border">
+
+            <Button
+                android:id="@+id/button_who_can_read"
+                style="@style/createPostStyle_checkBox_who_can_read"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <include
+                android:id="@+id/boundary"
+                layout="@layout/custom_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/authorContainer"
+                />
+            <Button
+                android:id="@+id/button_prayer_for"
+                style="@style/createPostStyle_checkBox_prayer_for"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/prayList_status"
+            android:background="@drawable/border">
+
+
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:gravity="start"
+                android:hint="\n"
+                android:background="@null"
+                android:inputType="textMultiLine"
+                android:fontFamily="@string/font_primary"
+                />
+<!--            android:background="@drawable/border"-->
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:id="@+id/imageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_below="@+id/input_layout_description"
+            android:layout_marginBottom="@dimen/intrinsic_padding"
+            android:background="@drawable/border">
+
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:src="@drawable/ic_stub"
+                android:visibility="invisible"/>    <!-- 사진 첨부 숨김 그런다고 누를 수 있으면 안됨. -->
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/submitPrayList"
+            style="@style/createPostStyle_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageContainer"
+            android:background="@color/follow_button_color" />
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

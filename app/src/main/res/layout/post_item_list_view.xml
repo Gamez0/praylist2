@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/intrinsic_padding"
+    android:paddingRight="@dimen/intrinsic_padding"
+    android:paddingTop="@dimen/intrinsic_padding">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="@dimen/post_card_elevation"
+        card_view:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/postImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/post_list_item_image_height"
+                android:layout_marginBottom="@dimen/intrinsic_padding"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                />
+
+            <com.rozdoum.socialcomponents.views.CircularImageView
+                android:id="@+id/authorImageView"
+                android:layout_width="@dimen/post_list_item_author_image_side"
+                android:layout_height="@dimen/post_list_item_author_image_side"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/postImageView"
+                android:layout_marginRight="@dimen/intrinsic_padding"
+                android:layout_marginTop="@dimen/post_list_item_author_image_margin"
+                app:border="false"
+                app:shadow="true"
+                app:shadow_radius="@dimen/circle_image_shadow_radius"
+                app:shadow_color="@color/circle_image_shadow" />
+
+<!--            <Button-->
+<!--                android:id="@+id/addToMyPrayList"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:text="+PrayList"-->
+<!--                android:layout_marginTop="@dimen/post_add_to_my_praylist_button_marginTop"-->
+<!--                android:layout_marginRight="@dimen/half_small_intrinsic_padding"-->
+<!--                android:fontFamily="@string/font_primary"-->
+<!--                android:layout_below="@+id/authorImageView"-->
+<!--                android:background="@drawable/add_to_my_praylist_button_border"/>-->
+            <com.rozdoum.socialcomponents.views.CircularImageView
+                android:id="@+id/addToMyPrayList"
+                android:layout_width="@dimen/post_author_image_side"
+                android:layout_height="@dimen/post_author_image_side"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/prayerForContainer"
+                android:layout_marginRight="@dimen/intrinsic_padding"
+                android:src="@drawable/add_praylist_button"
+                android:layout_below="@+id/authorImageView"
+                app:border="false"
+                app:shadow="true"
+                app:shadow_color="@color/circle_image_shadow"
+                app:shadow_radius="@dimen/circle_image_shadow_radius"
+                android:transitionName="@string/post_author_image_transition_name"
+                />
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/post_list_item_details_marginLeft"
+                android:layout_marginTop="@dimen/post_list_item_details_marginTop"
+                android:layout_marginBottom="@dimen/intrinsic_padding"
+                android:background="@drawable/border"
+                android:ellipsize="end"
+                android:fontFamily="@string/font_primary"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/intrinsic_padding"
+                android:paddingRight="@dimen/intrinsic_padding"
+                android:textAppearance="@style/TextAppearance.Title" />
+            <!--android:layout_below="@+id/postImageView" -->
+
+            <TextView
+                android:id="@+id/detailsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/post_list_item_image_height"
+                android:paddingLeft="@dimen/intrinsic_padding"
+                android:paddingRight="@dimen/intrinsic_padding"
+                android:layout_below="@+id/titleTextView"
+                android:fontFamily="@string/font_primary"
+                android:layout_marginTop="@dimen/post_list_item_details_marginTop"
+                android:layout_marginLeft="@dimen/post_list_item_details_marginLeft"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/authorImageView"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.Second"
+                android:layout_alignParentEnd="true" />
+            <!-- android:layout_below="@+id/titleTextView"-->
+
+            <include
+                android:id="@+id/countersContainer"
+                layout="@layout/counters_panel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="@dimen/intrinsic_padding"
+                android:layout_marginRight="@dimen/intrinsic_padding"
+                android:visibility="invisible" />
+
+
+            <!-- android:layout_below="@+id/detailsTextView"-->
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

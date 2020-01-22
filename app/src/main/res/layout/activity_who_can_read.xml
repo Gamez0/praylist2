@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/intrinsic_padding"
+    tools:context=".main.post.WhoCanReadActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/toEveryOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/whoCanRead_toEveryOne">
+
+        </Button>
+<!--        <Button-->
+<!--            android:id="@+id/onlyFellow"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            style="@style/whoCanRead_onlyFellow">-->
+
+<!--        </Button>-->
+        <Button
+            android:id="@+id/onlyMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/whoCanRead_onlyMe">
+
+        </Button>
+
+<!--        <Button-->
+<!--            android:id="@+id/someFellow"-->
+<!--            style="@style/whoCanRead_someFellow"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--        </Button>-->
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,203 @@
+<!--
+  ~  Copyright 2017 Rozdoum
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="app_name">PrayList</string>
+    <string name="label_main_activity">모두의 Praylist</string>
+    <string name="label_create_post_activity">기도제목 작성</string>
+    <string name="label_post_detail_activity">상세보기</string>
+    <string name="label_image_detail_activity">이미지</string>
+    <string name="title_activity_login">회원가입</string>
+    <string name="title_activity_create_profile">프로필 생성</string>
+    <string name="title_activity_profile">내 프레이리스트</string>
+    <string name="title_activity_edit_profile">프로필 수정</string>
+    <string name="title_activity_edit_post">기도제목 수정</string>
+    <string name="title_activity_following_posts">새로운 프레이리스트</string>
+    <string name="title_activity_who_can_read">공개 범위</string>
+    <string name="title_activity_prayer_for">누구를 위한</string>
+
+    <string name="font_primary">@font/nanumbarunpenr</string>
+    <string name="font_primary_bold">@font/nanumbarunpenb</string>
+
+    <string name="text_take_photo">Take photo</string>
+    <string name="text_pick_photo">갤러리에서 선택</string>
+    <string name="button_title_cancel">취소</string>
+    <string name="button_ok">확인</string>
+
+    <string name="hint_title">기도 제목</string>
+    <string name="hint_description2">무엇을 기도하시나요?</string>
+    <string name="hint_description">내가 기도하노라 너희 사랑을 지식과 모든 총명으로 점점 더 풍성하게 하사 너희로 지극히 선한 것을 분별하며 또 진실하여 허물없이 그리스도의 날까지 이르고 예수 그리스도로 말미암아 의의 열매가 가득하여 하나님의 영광과 찬송이 되기를 원하노라</string>
+    <string name="message_post_was_created">프레이리스트에 추가됨</string>
+    <string name="error_fail_create_post">기도제목 작성 실패</string>
+    <string name="error_fail_load_image">이미지 로드 실패</string>
+    <string name="error_fail_crop_image">Fail to crop image</string>
+    <string name="error_smaller_image">Image is too small. Required image size 100x100 px</string>
+    <string name="error_incorrect_file_type">Incorrect file type</string>
+    <string name="error_bigger_file">File size is bigger than 10Mb</string>
+    <string name="message_creating_post">프레이리스트 추가 중 …</string>
+    <string name="message_saving">저장 중 …</string>
+    <string name="warning_empty_image">Image is required</string>
+    <string name="warning_empty_title">Title is required</string>
+    <string name="warning_empty_description">기도를 써주세요</string>
+    <string name="error_post_title_length">Max length of the title should be less than 255 symbols</string>
+    <string name="error_fail_remove_post">리스트 삭제 실패</string>
+    <string name="message_post_was_removed">리스트가 삭제 되었습니다</string>
+    <string name="error_fail_update_post">리스트 업데이트 실패</string>
+    <string name="error_post_was_removed">Post was removed</string>
+    <string name="confirm_deletion_post">리스트를 제거하시겠습니까?</string>
+
+    <string name="comment_text_hint">함께 하는 기도를 적어주세요…</string>
+    <string name="button_post_comment">함께 기도하기</string>
+
+    <string name="label_comments">함께하는 기도들 (%1$d):</string>
+
+    <string name="create_post_menu_label">작성하기</string>
+    <string name="create_post_full_menu_label">기도제목 작성</string>
+    <string name="sign_out_menu_label">로그아웃</string>
+    <string name="edit_profile_menu_label">프로필 수정</string>
+    <string name="button_title_save">완료</string>
+    <string name="button_title_continue">이어쓰기</string>
+
+    <!-- Strings related to registration and login -->
+    <string name="prompt_email">이메일</string>
+    <string name="prompt_name">이름</string>
+    <string name="prompt_password">비밀번호</string>
+    <string name="prompt_conf_password">비밀번호 확인</string>
+    <string name="action_create_profile">Continue</string> <!-- 이건 뭐지? -->
+    <string name="error_field_required">This field is required</string>
+    <string name="error_profile_name_length">Max length of the name should be less than 120 symbols</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_confirm_password">Wrong password confirmation</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="permissions_not_granted">Cancelling, required permissions are not granted</string>
+    <string name="error_fail_create_profile">Fail to create profile</string>
+    <string name="error_fail_update_profile">Fail to update profile</string>
+    <string name="text_login">Thank you for using our application! Please, sign in for continue your action.</string>
+    <string name="error_authentication">Authentication failed.</string>
+    <string name="error_google_play_services">Google Play Services error.</string>
+    <string name="button_login_with_facebook">페이스북으로 로그인</string>
+    <string name="button_login_with_google">구글로 로그인</string>
+
+
+    <string name="loading">Loading …</string> <!-- 상여? 향연? 하나님께 기도가 드려질 때 쓰는 표현이 뭐였더라.-->
+    <string name="removing">Removing …</string>
+    <string name="error_general">Somthing went wrong.</string>
+    <string name="error_general_post">Somthing went wrong with post, id: %1$s</string>
+    <string name="internet_connection_failed">No internet connection</string>
+    <string name="press_once_again_to_exit">Press once again to exit</string>
+
+    <!-- Strings related to login -->
+
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="profile_menu_item">프로플</string>
+    <string name="collapse_text_label">show less</string>
+    <string name="expand_text_label">show more</string>
+    <string name="add_complain">Complain</string>
+    <string name="edit_post_menu">리스트 수정</string>
+    <string name="delete_post_menu">리스트 삭제</string>
+    <string name="complain_text">You can complain to this post if it contains violence,
+        bullying and threats, hate speech, tragic events and sexually explicit contents.
+        Nobody will see the post if you complain to it. You can\'t delete your complain.</string>
+
+    <string name="send_comment_button_label">전송</string>
+    <string name="posted_by_label">Prayer by:</string>
+    <string name="prayer_for">Prayer for:</string>
+
+    <plurals name="posts_counter_format">
+        <item quantity="one">prayer</item>
+        <item quantity="other">prayers</item>
+    </plurals>
+
+    <plurals name="likes_counter_format">
+        <item quantity="one">like</item>
+        <item quantity="other">likes</item>
+    </plurals>
+
+    <plurals name="followers_counter_format">
+        <item quantity="one">follower</item>
+        <item quantity="other">followers</item>
+    </plurals>
+
+    <plurals name="followings_counter_format">
+        <item quantity="one">following</item>
+        <item quantity="other">followings</item>
+    </plurals>
+
+    <string name="posts_label">Prayers:</string>
+    <string name="complain_sent">Complain was sent successfully</string>
+    <string name="now_time_range">now</string>
+
+    <string name="duration_minutes_shortest">%1$d m</string>
+    <string name="duration_hours_shortest">%1$d h</string>
+    <string name="duration_days_shortest">%1$d d</string>
+    <string name="duration_week_shortest">%1$d w</string>
+
+    <string name="post_image_transition_name" translatable="false">post_image_transition</string>
+    <string name="post_author_image_transition_name" translatable="false">post_author_image_transition_name</string>
+    <string name="message_new_post_was_created">New post was created</string>
+
+    <plurals name="new_posts_counter_format">
+        <item quantity="one">%1$d new prayer</item>
+        <item quantity="other">%1$d new prayers</item>
+    </plurals>
+
+    <string name="edit_comment_menu_item">Edit</string>
+    <string name="delete_comment_menu_item">Delete</string>
+    <string name="message_comment_was_removed">Comment was removed</string>
+    <string name="message_comment_was_edited">Comment was edited</string>
+    <string name="title_edit_comment">Edit comment</string>
+
+    <!--Follow-->
+    <string name="button_follow_title">Follow</string>
+    <string name="button_follow_back_title">Follow back</string>
+    <string name="button_following">Following</string>
+    <string name="unfollow_user_message">Unfollow %1$s?</string>
+    <string name="button_title_unfollow">Unfollow</string>
+    <string name="message_following_posts_empty">누군가와 동역해서 새로운 기도문을 받아보세요</string>
+    <string name="following_post_menu_item">Following Prayers</string>
+
+    <!--Users list-->
+    <string name="title_followers">Followers</string>
+    <string name="title_followings">Followings</string>
+    <string name="message_empty_list">You don\'t have any %1$s yet</string>
+
+    <!--Search-->
+    <string name="search_menu_item">Search</string>
+    <string name="search_hint">Search …</string>
+    <string name="posts_tab_title">Prayers</string>
+    <string name="users_tab_title">Users</string>
+    <string name="empty_posts_search_message">No prayers found</string>
+    <string name="empty_user_search_message">No users found</string>
+
+
+    <!--Firebase errors-->
+    <string name="permission_denied_error">Please check your rules to access the Firebase Realtime Database</string>
+
+    <!--Notifications-->
+    <string name="new_like_channel_name">New Like</string>
+    <string name="new_comment_channel_name">New Comment</string>
+
+    <!--facebook login-->
+    <string name="facebook_app_id">1039653073078109</string>
+    <string name="fb_login_protocol_scheme">fb1039653073078109</string>
+
+</resources>
