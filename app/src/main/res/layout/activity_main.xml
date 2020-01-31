@@ -71,9 +71,10 @@
         android:id="@+id/addNewPostFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
         android:layout_margin="@dimen/large_intrinsic_padding"
         android:clickable="true"
         android:src="@drawable/ic_add_white_48dp"
-        android:layout_gravity="bottom|right" />
+        app:backgroundTint="@color/primary" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -185,22 +185,33 @@
 <!--                android:adjustViewBounds="true"-->
 <!--                />-->
 
-            <com.rozdoum.socialcomponents.views.CircularImageView
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/addToMyPrayList"
-                android:layout_width="@dimen/post_author_image_side"
-                android:layout_height="@dimen/post_author_image_side"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@+id/prayerForContainer"
-                android:layout_marginRight="@dimen/intrinsic_padding"
-                android:src="@drawable/add_praylist_button"
-                android:layout_below="@+id/prayerForContainer"
-                app:border="false"
-                app:shadow="true"
-                app:shadow_color="@color/circle_image_shadow"
-                app:shadow_radius="@dimen/circle_image_shadow_radius"
-                tools:targetApi="lollipop"
+                android:layout_margin="@dimen/large_intrinsic_padding"
+                android:clickable="true"
+                android:src="@drawable/ic_add_white_48dp"
+                app:backgroundTint="@color/primary" />
+<!--            <com.rozdoum.socialcomponents.views.CircularImageView-->
+<!--                android:id="@+id/addToMyPrayList"-->
+<!--                android:layout_width="@dimen/post_author_image_side"-->
+<!--                android:layout_height="@dimen/post_author_image_side"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignTop="@+id/prayerForContainer"-->
+<!--                android:layout_marginRight="@dimen/intrinsic_padding"-->
+<!--                android:src="@drawable/add_praylist_button"-->
+<!--                android:layout_below="@+id/prayerForContainer"-->
+<!--                app:border="false"-->
+<!--                app:shadow="true"-->
+<!--                app:shadow_color="@color/circle_image_shadow"-->
+<!--                app:shadow_radius="@dimen/circle_image_shadow_radius"-->
+<!--                tools:targetApi="lollipop"-->
 
-                />
+<!--                />-->
                 <!--android:transitionName="@string/post_author_image_transition_name"
                 -->
             <TextView
