@@ -389,13 +389,15 @@ public class PostDetailsActivity extends BaseActivity<PostDetailsView, PostDetai
     }
 
     @Override
-    public void openAddPostActivity(String prayer, String username) {
+    public void openAddPostActivity(String prayer, String username, String authorId) {
 
         String prayerFor = username;
+        String prayerForId = authorId;
 
         Intent intent = new Intent(this, AddPostActivity.class);
         intent.putExtra(AddPostActivity.POST_EXTRA_KEY,prayer);
         intent.putExtra(AddPostActivity.USERNAME_EXTRA_KEY,prayerFor);
+        intent.putExtra(AddPostActivity.AUTHOR_EXTRA_KEY,prayerForId);
         startActivityForResult(intent, AddPostActivity.CREATE_NEW_POST_REQUEST);
 
 //        Intent intent = new Intent(PostDetailsActivity.this, EditPostActivity.class);

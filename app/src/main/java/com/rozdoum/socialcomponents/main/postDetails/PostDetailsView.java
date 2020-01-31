@@ -29,7 +29,7 @@ import java.util.List;
  */
 
 public interface PostDetailsView extends BaseView {
-    void openAddPostActivity(String prayer, String username);
+    void openAddPostActivity(String prayer, String username, String authorId);
 
     void onPostRemoved();
 

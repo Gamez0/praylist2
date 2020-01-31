@@ -149,7 +149,7 @@ class PostDetailsPresenter extends BasePresenter<PostDetailsView> {
         if (checkInternetConnection(anchorView)) {
             if (checkAuthorization()) {
                 if(post!=null){
-                    ifViewAttached(view -> view.openAddPostActivity(post.getDescription(),post.getUsername()));
+                    ifViewAttached(view -> view.openAddPostActivity(post.getDescription(),post.getUsername(),post.getAuthorId()));
                 }
             }
         }
