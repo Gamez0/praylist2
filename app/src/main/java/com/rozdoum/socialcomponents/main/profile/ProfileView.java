@@ -29,6 +29,11 @@ import com.rozdoum.socialcomponents.model.Profile;
  */
 
 public interface ProfileView extends BaseView {
+    void setTitleName(String username);
+
+    void setChurchName(String churchName);
+
+    void setMissionaryName(String missionaryName);
 
     void showUnfollowConfirmation(Profile profile);
 

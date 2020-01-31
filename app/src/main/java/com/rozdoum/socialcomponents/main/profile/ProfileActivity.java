@@ -77,6 +77,8 @@ public class ProfileActivity extends BaseActivity<ProfileView, ProfilePresenter>
 
     // UI references.
     private TextView nameEditText;
+    private TextView churchEditText;
+    private TextView missionaryEditText;
     private ImageView imageView;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
@@ -111,6 +113,7 @@ public class ProfileActivity extends BaseActivity<ProfileView, ProfilePresenter>
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
         if (firebaseUser != null) {
             currentUserId = firebaseUser.getUid();
         }
@@ -119,6 +122,8 @@ public class ProfileActivity extends BaseActivity<ProfileView, ProfilePresenter>
         progressBar = findViewById(R.id.progressBar);
         imageView = findViewById(R.id.imageView);
         nameEditText = findViewById(R.id.nameEditText);
+        churchEditText = findViewById(R.id.churchEditText);
+        missionaryEditText = findViewById(R.id.missionaryEditText);
         postsCounterTextView = findViewById(R.id.postsCounterTextView);
         likesCountersTextView = findViewById(R.id.likesCountersTextView);
         followersCounterTextView = findViewById(R.id.followersCounterTextView);
@@ -308,6 +313,16 @@ public class ProfileActivity extends BaseActivity<ProfileView, ProfilePresenter>
     }
 
     @Override
+    public void setChurchName(String churchName) {
+        churchEditText.setText(churchName);
+    }
+
+    @Override
+    public void setMissionaryName(String missionaryName) {
+        missionaryEditText.setText(missionaryName);
+    }
+
+    @Override
     public void setProfilePhoto(String photoUrl) {
         ImageUtil.loadImage(GlideApp.with(this), photoUrl, imageView, new RequestListener<Drawable>() {
             @Override
@@ -411,6 +426,7 @@ public class ProfileActivity extends BaseActivity<ProfileView, ProfilePresenter>
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (userID.equals(currentUserId)) {
+            setTitle("내 프레이리스트");
             MenuInflater inflater = getMenuInflater();
             inflater.inflate(R.menu.profile_menu, menu);
             return true;
@@ -435,5 +451,11 @@ public class ProfileActivity extends BaseActivity<ProfileView, ProfilePresenter>
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void setTitleName(String username) {
+        setTitle(String.format(getString(R.string.title_activity_profile),username));
+
     }
 }

@@ -30,7 +30,10 @@ public class Profile implements Serializable, LazyLoading {
     private String photoUrl;
     private long likesCount;
     private String registrationToken;
+    private String church="없음";
+    private String missionary="없음";
     private ItemType itemType;
+
 
     public Profile() {
         // Default constructor required for calls to DataSnapshot.getValue(Profile.class)
@@ -90,6 +93,22 @@ public class Profile implements Serializable, LazyLoading {
 
     public void setRegistrationToken(String registrationToken) {
         this.registrationToken = registrationToken;
+    }
+
+    public String getChurch() {
+        return church;
+    }
+
+    public void setChurch(String church) {
+        this.church = church;
+    }
+
+    public String getMissionary() {
+        return missionary;
+    }
+
+    public void setMissionary(String missionary) {
+        this.missionary = missionary;
     }
 
     @Override

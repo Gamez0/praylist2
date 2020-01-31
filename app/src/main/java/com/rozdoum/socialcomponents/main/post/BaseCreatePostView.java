@@ -35,7 +35,7 @@ public interface BaseCreatePostView extends PickImageView {
 
     boolean getGlobal();
 
-    int getPrayerFor();
+    String getPrayerFor();
 
     void requestImageViewFocus();
 

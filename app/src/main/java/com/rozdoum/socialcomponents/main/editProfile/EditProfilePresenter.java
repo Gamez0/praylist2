@@ -52,6 +52,8 @@ public class EditProfilePresenter<V extends EditProfileView> extends PickImagePr
                 ifViewAttached(view -> {
                     if (profile != null) {
                         view.setName(profile.getUsername());
+                        view.setChurch(profile.getChurch());
+                        view.setMissionary(profile.getMissionary());
 
                         if (profile.getPhotoUrl() != null) {
                             view.setProfilePhoto(profile.getPhotoUrl());
@@ -71,6 +73,9 @@ public class EditProfilePresenter<V extends EditProfileView> extends PickImagePr
                 view.setNameError(null);
 
                 String name = view.getNameText().trim();
+                String church = view.getChurchText().trim();
+                String missionary = view.getMissionaryText().trim();
+
                 boolean cancel = false;
 
                 if (TextUtils.isEmpty(name)) {
@@ -84,6 +89,8 @@ public class EditProfilePresenter<V extends EditProfileView> extends PickImagePr
                 if (!cancel) {
                     view.showProgress();
                     profile.setUsername(name);
+                    profile.setChurch(church);
+                    profile.setMissionary(missionary);
                     createOrUpdateProfile(imageUri);
                 }
             });

@@ -38,13 +38,13 @@ import com.rozdoum.socialcomponents.utils.ValidationUtil;
  * Created by Alexey on 03.05.18.
  */
 
-public abstract class BaseCreatePostPresenter<V extends BaseCreatePostView> extends PickImagePresenter<V> implements OnPostCreatedListener {
+public abstract class BaseAddPostPresenter<V extends BaseAddPostView> extends PickImagePresenter<V> implements OnPostCreatedListener {
 
     protected boolean creatingPost = false;
     protected PostManager postManager;
 
 
-    public BaseCreatePostPresenter(Context context) {
+    public BaseAddPostPresenter(Context context) {
         super(context);
         postManager = PostManager.getInstance(context);
     }
@@ -63,9 +63,10 @@ public abstract class BaseCreatePostPresenter<V extends BaseCreatePostView> exte
             view.setDescriptionError(null);
 
             String title = view.getTitleText().trim();
+            String prayerFor = view.getPrayerForText().trim();
             String description = view.getDescriptionText().trim();
             boolean isGlobal = view.getGlobal();
-            String prayerFor = view.getPrayerFor();
+
 
             boolean cancel = false;
 

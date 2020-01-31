@@ -30,6 +30,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.rozdoum.socialcomponents.R;
 import com.rozdoum.socialcomponents.main.base.BasePresenter;
 import com.rozdoum.socialcomponents.main.base.BaseView;
+import com.rozdoum.socialcomponents.main.main.MainView;
 import com.rozdoum.socialcomponents.managers.CommentManager;
 import com.rozdoum.socialcomponents.managers.PostManager;
 import com.rozdoum.socialcomponents.managers.ProfileManager;
@@ -142,6 +143,17 @@ class PostDetailsPresenter extends BasePresenter<PostDetailsView> {
         if (checkInternetConnection() && checkAuthorization()) {
             sendComment();
         }
+    }
+
+    public void onAddButtonClick(View anchorView){
+        if (checkInternetConnection(anchorView)) {
+            if (checkAuthorization()) {
+                if(post!=null){
+                    ifViewAttached(view -> view.openAddPostActivity(post.getDescription(),post.getUsername()));
+                }
+            }
+        }
+            //addpraylist_activity로 넘기면 된다! mainactivity에서 처럼
     }
 
     public boolean hasAccessToModifyPost() {

@@ -56,6 +56,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
     protected Context context;
     private ImageView postImageView;
     private TextView titleTextView;
+    private TextView prayerForTextView;
     private TextView detailsTextView;
     private TextView likeCounterTextView;
     private ImageView likesImageView;
@@ -64,6 +65,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
     private TextView dateTextView;
     private ImageView authorImageView;
     private ViewGroup likeViewGroup;
+    private ImageView addToMyPrayListView;
 
     private ProfileManager profileManager;
     protected PostManager postManager;
@@ -90,9 +92,12 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
         likeViewGroup = view.findViewById(R.id.likesContainer);
         detailsTextView = view.findViewById(R.id.detailsTextView);
         authorImageView = view.findViewById(R.id.authorImageView);
+        prayerForTextView = view.findViewById(R.id.prayerForTextView);
+        addToMyPrayListView = view.findViewById(R.id.addToMyPrayList);
 
         //authorImageView 를 안보이게 해줌.
         //authorImageView.setVisibility(isAuthorNeeded ? View.VISIBLE : View.GONE);
+
 
 
         profileManager = ProfileManager.getInstance(context.getApplicationContext());
@@ -118,6 +123,10 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
                 onClickListener.onAuthorClick(getAdapterPosition(), v);
             }
         });
+
+//        addToMyPrayListView.setOnClickListener(v->{
+//
+//        });
     }
 
     public void bindData(Post post) {
@@ -134,8 +143,13 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
             titleTextView.setText("이름 불러오기 실패");
         }
 
+        //setPrayerForTextView(post.getPrayerFor());
+
+
 //        String author = removeNewLinesDividers(post.getAuthorId());
 //        titleTextView.setText(author);
+
+        prayerForTextView.setText(post.getPrayerFor());
         String description = removeNewLinesDividers(post.getDescription());
         detailsTextView.setText(description);
         likeCounterTextView.setText(String.valueOf(post.getLikesCount()));

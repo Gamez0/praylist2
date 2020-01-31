@@ -16,16 +16,17 @@
   -->
 
 <resources>
-    <string name="app_name">PrayList</string>
-    <string name="label_main_activity">모두의 Praylist</string>
-    <string name="label_create_post_activity">기도제목 작성</string>
+    <string name="app_name">프레이리스트</string>
+    <string name="label_main_activity">모두의 프레이리스트</string>
+    <string name="label_create_post_activity">작성중</string>
+    <string name="label_add_post_activity">내 리스트에 쓰기</string>
     <string name="label_post_detail_activity">상세보기</string>
     <string name="label_image_detail_activity">이미지</string>
     <string name="title_activity_login">회원가입</string>
     <string name="title_activity_create_profile">프로필 생성</string>
-    <string name="title_activity_profile">내 프레이리스트</string>
+    <string name="title_activity_profile">%1$s의 프레이리스트</string>
     <string name="title_activity_edit_profile">프로필 수정</string>
-    <string name="title_activity_edit_post">기도제목 수정</string>
+    <string name="title_activity_edit_post">프레이리스트 수정</string>
     <string name="title_activity_following_posts">새로운 프레이리스트</string>
     <string name="title_activity_who_can_read">공개 범위</string>
     <string name="title_activity_prayer_for">누구를 위한</string>
@@ -42,7 +43,7 @@
     <string name="hint_description2">무엇을 기도하시나요?</string>
     <string name="hint_description">내가 기도하노라 너희 사랑을 지식과 모든 총명으로 점점 더 풍성하게 하사 너희로 지극히 선한 것을 분별하며 또 진실하여 허물없이 그리스도의 날까지 이르고 예수 그리스도로 말미암아 의의 열매가 가득하여 하나님의 영광과 찬송이 되기를 원하노라</string>
     <string name="message_post_was_created">프레이리스트에 추가됨</string>
-    <string name="error_fail_create_post">기도제목 작성 실패</string>
+    <string name="error_fail_create_post">프레이리스트 작성 실패</string>
     <string name="error_fail_load_image">이미지 로드 실패</string>
     <string name="error_fail_crop_image">Fail to crop image</string>
     <string name="error_smaller_image">Image is too small. Required image size 100x100 px</string>
@@ -57,7 +58,7 @@
     <string name="error_fail_remove_post">리스트 삭제 실패</string>
     <string name="message_post_was_removed">리스트가 삭제 되었습니다</string>
     <string name="error_fail_update_post">리스트 업데이트 실패</string>
-    <string name="error_post_was_removed">Post was removed</string>
+    <string name="error_post_was_removed">이미 삭제된 리스트입니다</string>
     <string name="confirm_deletion_post">리스트를 제거하시겠습니까?</string>
 
     <string name="comment_text_hint">함께 하는 기도를 적어주세요…</string>
@@ -66,15 +67,17 @@
     <string name="label_comments">함께하는 기도들 (%1$d):</string>
 
     <string name="create_post_menu_label">작성하기</string>
-    <string name="create_post_full_menu_label">기도제목 작성</string>
+    <string name="create_post_full_menu_label">프레이리스트 작성</string>
     <string name="sign_out_menu_label">로그아웃</string>
     <string name="edit_profile_menu_label">프로필 수정</string>
     <string name="button_title_save">완료</string>
-    <string name="button_title_continue">이어쓰기</string>
+    <string name="button_title_continue">생성</string>
 
     <!-- Strings related to registration and login -->
     <string name="prompt_email">이메일</string>
     <string name="prompt_name">이름</string>
+    <string name="prompt_church">교회</string>
+    <string name="prompt_missionary">선교단체</string>
     <string name="prompt_password">비밀번호</string>
     <string name="prompt_conf_password">비밀번호 확인</string>
     <string name="action_create_profile">Continue</string> <!-- 이건 뭐지? -->
@@ -93,10 +96,10 @@
     <string name="button_login_with_google">구글로 로그인</string>
 
 
-    <string name="loading">Loading …</string> <!-- 상여? 향연? 하나님께 기도가 드려질 때 쓰는 표현이 뭐였더라.-->
-    <string name="removing">Removing …</string>
-    <string name="error_general">Somthing went wrong.</string>
-    <string name="error_general_post">Somthing went wrong with post, id: %1$s</string>
+    <string name="loading">로딩 …</string> <!-- 상여? 향연? 하나님께 기도가 드려질 때 쓰는 표현이 뭐였더라.-->
+    <string name="removing">제거중 …</string>
+    <string name="error_general">Something went wrong.</string>
+    <string name="error_general_post">Something went wrong with post, id: %1$s</string>
     <string name="internet_connection_failed">No internet connection</string>
     <string name="press_once_again_to_exit">Press once again to exit</string>
 
@@ -108,10 +111,10 @@
         completions."
     </string>
 
-    <string name="profile_menu_item">프로플</string>
+    <string name="profile_menu_item">프로필</string>
     <string name="collapse_text_label">show less</string>
     <string name="expand_text_label">show more</string>
-    <string name="add_complain">Complain</string>
+    <string name="add_complain">신고</string>
     <string name="edit_post_menu">리스트 수정</string>
     <string name="delete_post_menu">리스트 삭제</string>
     <string name="complain_text">You can complain to this post if it contains violence,
@@ -167,13 +170,13 @@
     <string name="title_edit_comment">Edit comment</string>
 
     <!--Follow-->
-    <string name="button_follow_title">Follow</string>
-    <string name="button_follow_back_title">Follow back</string>
-    <string name="button_following">Following</string>
-    <string name="unfollow_user_message">Unfollow %1$s?</string>
-    <string name="button_title_unfollow">Unfollow</string>
+    <string name="button_follow_title">동역하기</string>
+    <string name="button_follow_back_title">나도 동역하기</string>
+    <string name="button_following">동역중</string>
+    <string name="unfollow_user_message">%1$s 해제?</string>
+    <string name="button_title_unfollow">해제</string>
     <string name="message_following_posts_empty">누군가와 동역해서 새로운 기도문을 받아보세요</string>
-    <string name="following_post_menu_item">Following Prayers</string>
+    <string name="following_post_menu_item">동역자들 Prayers</string>
 
     <!--Users list-->
     <string name="title_followers">Followers</string>

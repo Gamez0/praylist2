@@ -5,9 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/intrinsic_padding"
-    tools:context=".main.post.createPost.CreatePostActivity">
-
-
+    tools:context=".main.post.addPost.AddPostActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,56 +13,58 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         >
-        <LinearLayout
 
-            android:id="@+id/prayList_status"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/prayerFor_status"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/border"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/half_large_intrinsic_padding"
+            android:layout_marginBottom="@dimen/intrinsic_padding"
             >
 
-            <Button
-                android:id="@+id/button_who_can_read"
-                style="@style/createPostStyle_checkBox_who_can_read"
+            <TextView
+                android:id="@+id/prayerNameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/createPostStyle_add_prayer_name"
                 />
-            <include
-                android:id="@+id/boundary"
-                layout="@layout/custom_divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/authorContainer"
-                />
-            <Button
-                android:id="@+id/button_prayer_for"
-                style="@style/createPostStyle_checkBox_prayer_for"
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/createPostStyle_add_prayer_for"
                 />
 
         </LinearLayout>
+
+        <include
+            android:id="@+id/boundary"
+            layout="@layout/custom_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/prayerFor_status"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_description"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/prayList_status"
+            android:layout_below="@+id/boundary"
             android:background="@drawable/border">
 
 
             <EditText
                 android:id="@+id/descriptionEditText"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:gravity="start"
                 android:hint="\n"
                 android:background="@null"
                 android:inputType="textMultiLine"
                 android:fontFamily="@string/font_primary"
                 />
-<!--            android:background="@drawable/border"-->
+            <!--            android:background="@drawable/border"-->
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,7 +99,7 @@
 
         <Button
             android:id="@+id/submitPrayList"
-            style="@style/createPostStyle_submit"
+            style="@style/createPostStyle_add_to_my_pray_list"
             android:layout_marginTop="@dimen/half_large_intrinsic_padding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
 
 
 
-    </RelativeLayout>
 
+    </RelativeLayout>
 
 </ScrollView>

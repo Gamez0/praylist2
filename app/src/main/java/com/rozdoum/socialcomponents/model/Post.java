@@ -43,10 +43,11 @@ public class Post implements Serializable, LazyLoading {
     private long likesCount;
     private long watchersCount;
     private boolean hasComplain;
-    private ItemType itemType;
-    private int prayerFor;  //누구를 위한 기도인가? J를 위한, O를 위한, Y를 위한; 누구를 위한 기도문인가
+    private String prayerFor;  //누구를 위한 기도인가? J를 위한, O를 위한, Y를 위한; 누구를 위한 기도문인가
     private ArrayList<String> coPrayer; //누구에게 기도 부탁할까?, 누가 나를 위해 기도해줄까?; 공개범위 설정
     private boolean isGlobal;   // 전체공개인가? default는 전체공개로!
+    private ItemType itemType;
+
 
     public Post() {
         this.createdDate = new Date().getTime();
@@ -138,11 +139,11 @@ public class Post implements Serializable, LazyLoading {
         this.watchersCount = watchersCount;
     }
 
-    public int getPrayerFor() {
+    public String getPrayerFor() {
         return prayerFor;
     }
 
-    public void setPrayerFor(int prayerFor) {
+    public void setPrayerFor(String prayerFor) {
         this.prayerFor = prayerFor;
     }
 
@@ -184,10 +185,10 @@ public class Post implements Serializable, LazyLoading {
         result.put("likesCount", likesCount);
         result.put("watchersCount", watchersCount);
         result.put("hasComplain", hasComplain);
-        result.put("createdDateText", FormatterUtil.getFirebaseDateFormat().format(new Date(createdDate)));
         result.put("prayerFor",prayerFor);
         result.put("coPrayer",coPrayer);
         result.put("isGlobal",isGlobal);
+        result.put("createdDateText", FormatterUtil.getFirebaseDateFormat().format(new Date(createdDate)));
         return result;
     }
 

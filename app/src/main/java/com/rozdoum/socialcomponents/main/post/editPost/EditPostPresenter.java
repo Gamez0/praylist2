@@ -69,7 +69,7 @@ class EditPostPresenter extends BaseCreatePostPresenter<EditPostView> {
     }
 
     @Override
-    protected void savePost(final String title, final String description, final boolean isGlobal, final int prayerFor) {
+    protected void savePost(final String title, final String description, final boolean isGlobal, final String prayerFor) {
         ifViewAttached(view -> {
             view.showProgress(R.string.message_saving);
 

@@ -67,6 +67,8 @@ import com.rozdoum.socialcomponents.enums.PostStatus;
 import com.rozdoum.socialcomponents.listeners.CustomTransitionListener;
 import com.rozdoum.socialcomponents.main.base.BaseActivity;
 import com.rozdoum.socialcomponents.main.imageDetail.ImageDetailActivity;
+import com.rozdoum.socialcomponents.main.post.addPost.AddPostActivity;
+import com.rozdoum.socialcomponents.main.post.createPost.CreatePostActivity;
 import com.rozdoum.socialcomponents.main.post.editPost.EditPostActivity;
 import com.rozdoum.socialcomponents.main.profile.ProfileActivity;
 import com.rozdoum.socialcomponents.managers.PostManager;
@@ -107,6 +109,7 @@ public class PostDetailsActivity extends BaseActivity<PostDetailsView, PostDetai
     private RecyclerView commentsRecyclerView;
     private TextView warningCommentsTextView;
     private TextView prayerForTextView;
+    private ImageView addToMyPrayListView;
 
 
     private MenuItem complainActionMenuItem;
@@ -161,6 +164,7 @@ public class PostDetailsActivity extends BaseActivity<PostDetailsView, PostDetai
         warningCommentsTextView = findViewById(R.id.warningCommentsTextView);
         sendButton = findViewById(R.id.sendButton);
         prayerForTextView = findViewById(R.id.prayerForTextView);
+        addToMyPrayListView = findViewById(R.id.addToMyPrayList);
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && isAuthorAnimationRequired) {
             authorImageView.setScaleX(0);
@@ -262,6 +266,7 @@ public class PostDetailsActivity extends BaseActivity<PostDetailsView, PostDetai
 
         authorImageView.setOnClickListener(v -> presenter.onAuthorClick(v));
         authorTextView.setOnClickListener(v -> presenter.onAuthorClick(v));
+        addToMyPrayListView.setOnClickListener(v->presenter.onAddButtonClick(addToMyPrayListView));
 
         likesContainer.setOnClickListener(v -> {
             if (likeController != null && presenter.isPostExist()) {
@@ -371,16 +376,31 @@ public class PostDetailsActivity extends BaseActivity<PostDetailsView, PostDetai
     }
 
     @Override
-    public void setPrayerFor(int prayerFor) {
-        if(prayerFor==0){
+    public void setPrayerFor(String prayerFor) {
+        if(prayerFor.equals("J")){
             prayerForTextView.setText("Jesus");
-        }else if(prayerFor==1){
+        }else if(prayerFor.equals("O")){
             prayerForTextView.setText("Others");
-        }else if(prayerFor==2){
+        }else if(prayerFor.equals("Y")){
             prayerForTextView.setText("You");
         }else{
             prayerForTextView.setText("선택 안됨");
         }
+    }
+
+    @Override
+    public void openAddPostActivity(String prayer, String username) {
+
+        String prayerFor = username;
+
+        Intent intent = new Intent(this, AddPostActivity.class);
+        intent.putExtra(AddPostActivity.POST_EXTRA_KEY,prayer);
+        intent.putExtra(AddPostActivity.USERNAME_EXTRA_KEY,prayerFor);
+        startActivityForResult(intent, AddPostActivity.CREATE_NEW_POST_REQUEST);
+
+//        Intent intent = new Intent(PostDetailsActivity.this, EditPostActivity.class);
+//        intent.putExtra(EditPostActivity.POST_EXTRA_KEY, post);
+//        startActivityForResult(intent, EditPostActivity.EDIT_POST_REQUEST);
     }
 
     @Override

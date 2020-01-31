@@ -168,6 +168,17 @@ class ProfilePresenter extends BasePresenter<ProfileView> {
                 profile = obj;
                 ifViewAttached(view -> {
                     view.setProfileName(profile.getUsername());
+                    if(profile.getChurch()!=null && !profile.getChurch().equals("없음")) {
+                        view.setChurchName(profile.getChurch());
+                    }else{
+                        view.setChurchName("출석 교회 없음");
+                    }
+                    if(profile.getMissionary()!=null && !profile.getMissionary().equals("없음")){
+                        view.setMissionaryName("/ "+profile.getMissionary());
+                    }
+                    if(!userID.equals(getCurrentUserId())){
+                        view.setTitleName(profile.getUsername());
+                    }
 
                     if (profile.getPhotoUrl() != null) {
                         view.setProfilePhoto(profile.getPhotoUrl());

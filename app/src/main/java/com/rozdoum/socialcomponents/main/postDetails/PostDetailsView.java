@@ -29,6 +29,7 @@ import java.util.List;
  */
 
 public interface PostDetailsView extends BaseView {
+    void openAddPostActivity(String prayer, String username);
 
     void onPostRemoved();
 
@@ -38,7 +39,7 @@ public interface PostDetailsView extends BaseView {
 
     void setTitle(String title);
 
-    void setPrayerFor(int prayerFor);
+    void setPrayerFor(String prayerFor);
 
     void setDescription(String description);
 

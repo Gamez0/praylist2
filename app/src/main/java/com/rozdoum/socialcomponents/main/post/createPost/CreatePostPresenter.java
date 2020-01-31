@@ -39,7 +39,7 @@ public class CreatePostPresenter extends BaseCreatePostPresenter<CreatePostView>
     }
 
     @Override
-    protected void savePost(String title, String description, boolean isGlobal, int prayerFor) {
+    protected void savePost(String title, String description, boolean isGlobal, String prayerFor) {
         ifViewAttached(view -> {
             view.showProgress(R.string.message_creating_post);
             Post post = new Post();

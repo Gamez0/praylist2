@@ -14,7 +14,9 @@
  *    limitations under the License.
  */
 
-package com.rozdoum.socialcomponents.main.editProfile;
+package com.rozdoum.socialcomponents.main.post;
+
+import android.net.Uri;
 
 import com.rozdoum.socialcomponents.main.pickImageBase.PickImageView;
 
@@ -22,20 +24,31 @@ import com.rozdoum.socialcomponents.main.pickImageBase.PickImageView;
  * Created by Alexey on 03.05.18.
  */
 
-public interface EditProfileView extends PickImageView {
-    String getChurchText();
+public interface BaseAddPostView extends PickImageView {
+    //void setPrayerForText();
 
-    String getMissionaryText();
+    String getPrayerForText();
 
-    void setChurch(String church);
+    void setDescriptionError(String error);
 
-    void setMissionary(String missionary);
+    void setTitleError(String error);
 
-    void setName(String username);
+    String getTitleText();
 
-    void setProfilePhoto(String photoUrl);
+    String getDescriptionText();
 
-    String getNameText();
+    boolean getGlobal();
 
-    void setNameError(String string);
+    String getPrayerFor();
+
+    void requestImageViewFocus();
+
+    void onPostSavedSuccess();
+
+    Uri getImageUri();
+
+    void setNoneImageUri();
+
+    void setImageUri(Uri uri);
 }
+

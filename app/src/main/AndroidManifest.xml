@@ -52,6 +52,10 @@
             android:configChanges="orientation|screenSize"
             android:label="@string/label_create_post_activity" />
         <activity
+            android:name=".main.post.addPost.AddPostActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/label_add_post_activity" />
+        <activity
             android:name=".main.imageDetail.ImageDetailActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/label_image_detail_activity"

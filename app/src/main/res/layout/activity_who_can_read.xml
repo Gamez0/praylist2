@@ -7,7 +7,7 @@
     android:padding="@dimen/intrinsic_padding"
     tools:context=".main.post.WhoCanReadActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -30,11 +30,31 @@
             android:id="@+id/onlyMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/toEveryOne"
             style="@style/whoCanRead_onlyMe">
 
         </Button>
 
-<!--        <Button-->
+<!--        <ImageView-->
+<!--            android:id="@+id/toEveryOneImageView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:srcCompat="@drawable/ic_team_black"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignTop="@+id/toEveryOne"-->
+<!--            />-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/onlyMeImageView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:srcCompat="@drawable/ic_for_you_50_black"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignTop="@+id/onlyMe"-->
+<!--            />-->
+
+        <!--        <Button-->
 <!--            android:id="@+id/someFellow"-->
 <!--            style="@style/whoCanRead_someFellow"-->
 <!--            android:layout_width="match_parent"-->
@@ -42,7 +62,7 @@
 
 <!--        </Button>-->
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 </ScrollView>

@@ -45,6 +45,8 @@ public class EditProfileActivity<V extends EditProfileView, P extends EditProfil
 
     // UI references.
     private EditText nameEditText;
+    private EditText churchEditText;
+    private EditText missionaryEditText;
     protected ImageView imageView;
     private ProgressBar avatarProgressBar;
 
@@ -59,6 +61,8 @@ public class EditProfileActivity<V extends EditProfileView, P extends EditProfil
         avatarProgressBar = findViewById(R.id.avatarProgressBar);
         imageView = findViewById(R.id.imageView);
         nameEditText = findViewById(R.id.nameEditText);
+        churchEditText = findViewById(R.id.churchEditText);
+        missionaryEditText = findViewById(R.id.missionaryEditText);
 
         imageView.setOnClickListener(this::onSelectImageClick);
 
@@ -99,6 +103,26 @@ public class EditProfileActivity<V extends EditProfileView, P extends EditProfil
         // handle result of pick image chooser
         super.onActivityResult(requestCode, resultCode, data);
         handleCropImageResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public String getChurchText() {
+        return churchEditText.getText().toString();
+    }
+
+    @Override
+    public void setChurch(String church) {
+        churchEditText.setText(church);
+    }
+
+    @Override
+    public String getMissionaryText() {
+        return missionaryEditText.getText().toString();
+    }
+
+    @Override
+    public void setMissionary(String missionary) {
+        missionaryEditText.setText(missionary);
     }
 
     @Override

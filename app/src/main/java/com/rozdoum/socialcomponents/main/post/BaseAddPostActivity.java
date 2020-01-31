@@ -43,19 +43,19 @@ import com.theartofdev.edmodo.cropper.CropImage;
 /**
  * Created by Alexey on 03.05.18.
  */
-public abstract class BaseCreatePostActivity<V extends BaseCreatePostView, P extends BaseCreatePostPresenter<V>>
-        extends PickImageActivity<V, P> implements BaseCreatePostView {
+public abstract class BaseAddPostActivity<V extends BaseAddPostView, P extends BaseAddPostPresenter<V>>
+        extends PickImageActivity<V, P> implements BaseAddPostView {
 
     protected ImageView imageView;
     protected ProgressBar progressBar;
     protected EditText titleEditText;
     protected EditText descriptionEditText;
     protected Button submitPrayList;
-    protected Button whoCanReadButton;
-    protected Button prayerForButton;
+//    protected Button whoCanReadButton;
+//    protected Button prayerForButton;
     protected TextView prayerNameTextView;
 
-    protected boolean isGlobal = true;
+    protected boolean isGlobal = false;
     protected String prayerFor="Y";
     static final int request_ok_who =1;
     static final int request_ok_prayer=2;
@@ -64,7 +64,7 @@ public abstract class BaseCreatePostActivity<V extends BaseCreatePostView, P ext
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.base_create_post_activity);
+        setContentView(R.layout.base_add_post_activity);
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
@@ -75,8 +75,9 @@ public abstract class BaseCreatePostActivity<V extends BaseCreatePostView, P ext
         progressBar = findViewById(R.id.progressBar);
         imageView = findViewById(R.id.imageView);
         submitPrayList = findViewById(R.id.submitPrayList);
-        whoCanReadButton = findViewById(R.id.button_who_can_read);
-        prayerForButton = findViewById(R.id.button_prayer_for);
+        prayerNameTextView = findViewById(R.id.prayerNameTextView);
+//        whoCanReadButton = findViewById(R.id.button_who_can_read);
+//        prayerForButton = findViewById(R.id.button_prayer_for);
 
         descriptionEditText.setHint(R.string.hint_description2);
 
@@ -107,55 +108,55 @@ public abstract class BaseCreatePostActivity<V extends BaseCreatePostView, P ext
 //            }
 //        });
 
-        whoCanReadButton.setOnClickListener(v->{
-            // intent go new activity to get who can receive prayList
-            Intent intent = new Intent(this.getApplicationContext(),WhoCanReadActivity.class);
-            startActivityForResult(intent,request_ok_who);
-            Log.d(TAG,"whoCanReadButton pressed.");
-        });
-        prayerForButton.setOnClickListener(v->{
-            Intent intent = new Intent(this.getApplicationContext(),PrayerForActivity.class);
-            startActivityForResult(intent, request_ok_prayer);
-            Log.d(TAG,"prayerForButton pressed.");
-        });
+//        whoCanReadButton.setOnClickListener(v->{
+//            // intent go new activity to get who can receive prayList
+//            Intent intent = new Intent(this.getApplicationContext(),WhoCanReadActivity.class);
+//            startActivityForResult(intent,request_ok_who);
+//            Log.d(TAG,"whoCanReadButton pressed.");
+//        });
+//        prayerForButton.setOnClickListener(v->{
+//            Intent intent = new Intent(this.getApplicationContext(),PrayerForActivity.class);
+//            startActivityForResult(intent, request_ok_prayer);
+//            Log.d(TAG,"prayerForButton pressed.");
+//        });
 //        Intent intent = getIntent();
 //        int num = intent.getExtras().getInt("whoCanRead");
 //        Log.d(TAG,"공개범위는 :"+num);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        //Toast.makeText(this.getApplicationContext(),"onActivityResult() called.",Toast.LENGTH_LONG);// not working
-        Log.d(TAG,"onActivityResult called.");
-            if(requestCode==request_ok_who){
-                Log.d(TAG,"requestCode == request_ok");
-                if(resultCode==0){
-                    //모두에게 공개
-                    Toast.makeText(this.getApplicationContext(),"모두에게 공개",Toast.LENGTH_LONG);
-                    Log.d(TAG,"모두에게 공개");
-                    isGlobal =true;
-                } else if(resultCode==1){
-                    //동역자들에게 공개
-                    Log.d(TAG,"동역자에게 공개"); // 이건 아직 구현하기 힘듬으로 ㅠㅠ
-                } else {
-                    //나만
-                    Log.d(TAG,"나만 보기");
-                    isGlobal = false;
-                }
-            }else if(requestCode==request_ok_prayer){
-                if(resultCode==0){
-                    //for Jesus
-                    prayerFor="J";
-                }else if(resultCode==1){
-                    //for Others
-                    prayerFor="O";
-                }else{// resultCode==2 또는 선택 안한 경우
-                    //for You
-                    prayerFor="Y";
-                }
-            }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        //Toast.makeText(this.getApplicationContext(),"onActivityResult() called.",Toast.LENGTH_LONG);// not working
+//        Log.d(TAG,"onActivityResult called.");
+//            if(requestCode==request_ok_who){
+//                Log.d(TAG,"requestCode == request_ok");
+//                if(resultCode==0){
+//                    //모두에게 공개
+//                    Toast.makeText(this.getApplicationContext(),"모두에게 공개",Toast.LENGTH_LONG);
+//                    Log.d(TAG,"모두에게 공개");
+//                    isGlobal =true;
+//                } else if(resultCode==1){
+//                    //동역자들에게 공개
+//                    Log.d(TAG,"동역자에게 공개"); // 이건 아직 구현하기 힘듬으로 ㅠㅠ
+//                } else {
+//                    //나만
+//                    Log.d(TAG,"나만 보기");
+//                    isGlobal = false;
+//                }
+//            }else if(requestCode==request_ok_prayer){
+//                if(resultCode==0){
+//                    //for Jesus
+//                    prayerFor="J";
+//                }else if(resultCode==1){
+//                    //for Others
+//                    prayerFor="O";
+//                }else{// resultCode==2 또는 선택 안한 경우
+//                    //for You
+//                    prayerFor="Y";
+//                }
+//            }
+//    }
 
     @Override
     protected ProgressBar getProgressView() {
@@ -193,6 +194,11 @@ public abstract class BaseCreatePostActivity<V extends BaseCreatePostView, P ext
     @Override
     public String getDescriptionText() {
         return descriptionEditText.getText().toString();
+    }
+
+    @Override
+    public String getPrayerForText() {
+        return prayerNameTextView.getText().toString();
     }
 
     @Override

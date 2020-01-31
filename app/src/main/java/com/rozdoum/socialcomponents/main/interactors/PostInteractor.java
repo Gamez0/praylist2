@@ -284,6 +284,7 @@ public class PostInteractor {
                         post.setDescription((String) mapObj.get("description"));
                         post.setImageTitle((String) mapObj.get("imageTitle"));
                         post.setAuthorId((String) mapObj.get("authorId"));
+                        post.setPrayerFor((String)mapObj.get("prayerFor")); // 여기서도 바꿔줘야 적용이되네.
                         post.setCreatedDate(createdDate);
                         if (mapObj.containsKey("commentsCount")) {
                             post.setCommentsCount((long) mapObj.get("commentsCount"));

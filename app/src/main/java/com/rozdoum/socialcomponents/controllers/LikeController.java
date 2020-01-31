@@ -53,6 +53,10 @@ public class LikeController {
     private Context context;
     private String postId;
     private String postAuthorId;
+    private String description;
+    private String username;
+    private String prayerFor;
+
 
     private AnimationType likeAnimationType = LikeController.AnimationType.BOUNCE_ANIM;
 
@@ -72,6 +76,9 @@ public class LikeController {
         this.likeCounterTextView = likeCounterTextView;
         this.likesImageView = likesImageView;
         this.isListView = isListView;
+        this.description=post.getDescription();
+        this.username=post.getUsername();
+        this.prayerFor=post.getPrayerFor();
     }
 
     public void likeClickAction(long prevValue) {
