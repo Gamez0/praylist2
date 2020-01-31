@@ -52,7 +52,7 @@ public abstract class BaseAddPostPresenter<V extends BaseAddPostView> extends Pi
     @StringRes
     protected abstract int getSaveFailMessage();
 
-    protected abstract void savePost(final String title, final String description, final boolean isGlobal, final String prayerFor);
+    protected abstract void savePost(final String title, final String description, final boolean isGlobal, final String prayerFor, final String prayerForId);
 
     protected abstract boolean isImageRequired();
 
@@ -65,6 +65,7 @@ public abstract class BaseAddPostPresenter<V extends BaseAddPostView> extends Pi
             String title = view.getTitleText().trim();
             String prayerFor = view.getPrayerForText().trim();
             String description = view.getDescriptionText().trim();
+            String prayerForId = view.getPrayerForId().trim();
             boolean isGlobal = view.getGlobal();
 
 
@@ -97,7 +98,7 @@ public abstract class BaseAddPostPresenter<V extends BaseAddPostView> extends Pi
             if (!cancel) {
                 creatingPost = true;
                 view.hideKeyboard();
-                savePost(title, description,isGlobal,prayerFor);
+                savePost(title, description,isGlobal,prayerFor,prayerForId);
             }
         });
     }

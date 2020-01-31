@@ -254,7 +254,7 @@ public class PostInteractor {
         List<Post> list = new ArrayList<Post>();
         boolean isMoreDataAvailable = true;
         long lastItemCreatedDate = 0;
-        String myid;
+        String myid="failed";
         try{
             myid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         }catch (Exception e){
@@ -278,16 +278,21 @@ public class PostInteractor {
                     boolean hasComplain = mapObj.containsKey("hasComplain") && (boolean) mapObj.get("hasComplain");
                     boolean isGlobal = mapObj.containsKey("isGlobal")  && (boolean) mapObj.get("isGlobal");
                     boolean prayerForMe = false;
-                    String prayerForId= (String) mapObj.get("prayerForId");
+                    String prayerForId="failed";
+                    if(mapObj.containsKey("prayerForId")){
+                        prayerForId= (String) mapObj.get("prayerForId");
+                        if(prayerForId.equals(myid) && !myid.equals("failed")){
+                            prayerForMe=true;
+                        }
+                    }
+
                     long createdDate = (long) mapObj.get("createdDate");
 
                     if (lastItemCreatedDate == 0 || lastItemCreatedDate > createdDate) {
                         lastItemCreatedDate = createdDate;
                     }
+//                    prayerForMe= prayerForId.equals(myid);
 
-                    if(prayerForId.equals(myid) && !myid.equals("failed")){
-                        prayerForMe=true;
-                    }
 
                     if (!hasComplain) { //
                         Post post = new Post();
@@ -300,9 +305,9 @@ public class PostInteractor {
                         post.setPrayerFor((String)mapObj.get("prayerFor")); // 여기서도 바꿔줘야 적용이되네.
 
                         post.setCreatedDate(createdDate);
-//                        if(mapObj.containsKey("prayerForId")){
-//                            post.setPrayerForId((String)mapObj.get("prayerForId"));
-//                        }
+                        if(mapObj.containsKey("prayerForId")){
+                            post.setPrayerForId((String)mapObj.get("prayerForId"));
+                        }
                         if (mapObj.containsKey("commentsCount")) {
                             post.setCommentsCount((long) mapObj.get("commentsCount"));
                         }

@@ -27,6 +27,8 @@ import com.rozdoum.socialcomponents.main.pickImageBase.PickImageView;
 public interface BaseAddPostView extends PickImageView {
     //void setPrayerForText();
 
+    String getPrayerForId();
+
     String getPrayerForText();
 
     void setDescriptionError(String error);

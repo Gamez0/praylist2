@@ -44,6 +44,7 @@ public abstract class BaseAddPostActivity<V extends BaseAddPostView, P extends B
 //    protected Button whoCanReadButton;
 //    protected Button prayerForButton;
     protected TextView prayerNameTextView;
+    protected TextView prayerForIdTextView;
 
     protected boolean isGlobal = false;
     protected String prayerFor="Y";
@@ -66,6 +67,7 @@ public abstract class BaseAddPostActivity<V extends BaseAddPostView, P extends B
         imageView = findViewById(R.id.slide_image);
         submitPrayList = findViewById(R.id.submitPrayList);
         prayerNameTextView = findViewById(R.id.prayerNameTextView);
+        prayerForIdTextView = findViewById(R.id.prayerForId);
 //        whoCanReadButton = findViewById(R.id.button_who_can_read);
 //        prayerForButton = findViewById(R.id.button_prayer_for);
 
@@ -199,6 +201,11 @@ public abstract class BaseAddPostActivity<V extends BaseAddPostView, P extends B
     @Override
     public String getPrayerFor() {
         return prayerFor;
+    }
+
+    @Override
+    public String getPrayerForId() {
+        return prayerForIdTextView.getText().toString();
     }
 
     @Override
