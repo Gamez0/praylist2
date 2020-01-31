@@ -384,7 +384,7 @@ public class PostDetailsActivity extends BaseActivity<PostDetailsView, PostDetai
         }else if(prayerFor.equals("Y")){
             prayerForTextView.setText("You");
         }else{
-            prayerForTextView.setText("선택 안됨");
+            prayerForTextView.setText(prayerFor);
         }
     }
 
