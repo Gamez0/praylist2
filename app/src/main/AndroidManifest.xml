@@ -19,12 +19,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".main.onBoarding.onBoardingActivity"
+            android:theme="@style/AppCompat.NoActionBar">
+        </activity>
+        <activity
             android:name=".main.post.PrayerForActivity"
-            android:label="@string/title_activity_prayer_for"></activity>
-
+            android:label="@string/title_activity_prayer_for" />
         <activity
             android:name=".main.post.WhoCanReadActivity"
-            android:label="@string/title_activity_who_can_read"></activity>
+            android:label="@string/title_activity_who_can_read" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -33,7 +36,7 @@
         <activity
             android:name=".main.main.MainActivity"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/AppCompat.NoActionBar"></activity>
+            android:theme="@style/AppCompat.NoActionBar" />
         <activity
             android:name=".main.SplashAnimation.SplashActivity"
             android:theme="@style/SplashTheme">

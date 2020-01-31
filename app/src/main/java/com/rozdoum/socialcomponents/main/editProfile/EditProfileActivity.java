@@ -59,7 +59,7 @@ public class EditProfileActivity<V extends EditProfileView, P extends EditProfil
         }
 
         avatarProgressBar = findViewById(R.id.avatarProgressBar);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.slide_image);
         nameEditText = findViewById(R.id.nameEditText);
         churchEditText = findViewById(R.id.churchEditText);
         missionaryEditText = findViewById(R.id.missionaryEditText);

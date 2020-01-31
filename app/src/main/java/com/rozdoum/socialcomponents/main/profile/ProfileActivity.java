@@ -120,7 +120,7 @@ public class ProfileActivity extends BaseActivity<ProfileView, ProfilePresenter>
 
         // Set up the login form.
         progressBar = findViewById(R.id.progressBar);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.slide_image);
         nameEditText = findViewById(R.id.nameEditText);
         churchEditText = findViewById(R.id.churchEditText);
         missionaryEditText = findViewById(R.id.missionaryEditText);

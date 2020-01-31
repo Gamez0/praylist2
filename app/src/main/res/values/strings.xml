@@ -61,7 +61,7 @@
     <string name="error_post_was_removed">이미 삭제된 리스트입니다</string>
     <string name="confirm_deletion_post">리스트를 제거하시겠습니까?</string>
 
-    <string name="comment_text_hint">함께 하는 기도를 적어주세요…</string>
+    <string name="comment_text_hint">댓글을 입력하세요…</string>
     <string name="button_post_comment">함께 기도하기</string>
 
     <string name="label_comments">함께하는 기도들 (%1$d):</string>

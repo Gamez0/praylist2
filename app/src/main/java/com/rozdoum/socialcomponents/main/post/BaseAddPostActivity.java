@@ -16,9 +16,7 @@
 
 package com.rozdoum.socialcomponents.main.post;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,17 +26,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.fragment.app.Fragment;
 
 import com.rozdoum.socialcomponents.R;
 import com.rozdoum.socialcomponents.main.pickImageBase.PickImageActivity;
-import com.rozdoum.socialcomponents.managers.PostManager;
-import com.rozdoum.socialcomponents.managers.ProfileManager;
-import com.rozdoum.socialcomponents.managers.listeners.OnObjectChangedListenerSimple;
-import com.rozdoum.socialcomponents.model.Profile;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 /**
  * Created by Alexey on 03.05.18.
@@ -73,7 +63,7 @@ public abstract class BaseAddPostActivity<V extends BaseAddPostView, P extends B
         titleEditText = findViewById(R.id.descriptionEditText);
         descriptionEditText = findViewById(R.id.descriptionEditText);
         progressBar = findViewById(R.id.progressBar);
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.slide_image);
         submitPrayList = findViewById(R.id.submitPrayList);
         prayerNameTextView = findViewById(R.id.prayerNameTextView);
 //        whoCanReadButton = findViewById(R.id.button_who_can_read);
