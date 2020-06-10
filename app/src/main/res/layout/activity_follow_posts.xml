@@ -50,7 +50,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.rozdoum.socialcomponents.views.SwipeRefreshPreLollyPop
+        <com.praylist.socialcomponents.views.SwipeRefreshPreLollyPop
             android:id="@+id/swipeContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -64,7 +64,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/post_item_list_view" />
 
-        </com.rozdoum.socialcomponents.views.SwipeRefreshPreLollyPop>
+        </com.praylist.socialcomponents.views.SwipeRefreshPreLollyPop>
 
     </RelativeLayout>
 
